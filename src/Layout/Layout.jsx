@@ -24,7 +24,7 @@ import Modal from '@mui/material/Modal';
 import Adidas from "/src/assets/images/pngwing.com.png"
 import Nike from "/src/assets/images/pngwing.com (2).png"
 import LogOut from "/src/assets/images/pngwing.com (1).png"
-
+import Figth from "/src/assets/images/DPS.gif"
 
 // MUI Modal 
 
@@ -124,51 +124,65 @@ function Layout() {
     dispatch ( totalProductsGet ())
   },[dispatch])
   return (
+
+
+
     <>
     <div>
       <div className='flex justify-between pt-[20px]'>
 
       {
         pathname == "/login" ?
-        <ArticleIcon />
+        <ArticleIcon sx={{display:"none"}} />
         :
-        <ArticleIcon onClick={handleOpen} className='cursor-pointer pt-[5px]' sx={{ width: "17%" , height:"6vh"}} />
+        <ArticleIcon onClick={handleOpen} className='cursor-pointer pt-[5px] mb2:pr-[30px]' sx={{ width: "17%" , height:"6vh"}} />
       }
       
       
 
       </div>
 
-      <div className='pb-[10px]'>
+<div style={{ display : pathname != "/login" ? "block" : "none" }}>
+<div className='pb-[10px]'>
         <div className='pt-[5px] pl-[17.4px]'>
-          <h1 className='font-bold text-[25px]'> 
+          <h1 className='font-bold text-[25px] text-black mb2:text-[30px] lg:text-[40px]'> 
             Salam Aleykum 🖐🏻
           </h1>
-          <p className='text-[#7e7878] text-[19px] dark:text-white'>
+
+
+          <p className='text-[#7e7878] text-[19px] dark:text-white mb2:text-[22px] lg:text-[25px]'>
             Welcome to Oasis
           </p>
+          <marquee>
+         <img src={Figth} alt="adidas" className='lg:w-[150px] lg:ml-[28px]' />
+         Мотивацию надо Подняяттьь!!!
+          </marquee>
         </div>
       </div>
 
       <div className='flex gap-[33px] items-center justify-center'>
         <input type="search" className='bg-[#e0e4f5] dark:bg-[#bfc3d4] p-[10.5px] px-[40px] rounded-[4px] placeholder:text-[gray] font-semibold' placeholder='⁐   Search...' />
       
-        <MicIcon onClick={()=> setCnt(true)} style={{ width:"80px" , height:"4.7vh" , display: !cnt  ? "flex" : "none" }} className='bg-[#9775FA] dark:bg-[#585364] text-[white] p-[5px] rounded-[5px]' />
+        <MicIcon onClick={()=> setCnt(true)} style={{ width:"80px" , height:"4.7vh" , display: !cnt  ? "flex" : "none" }} className='bg-[#9775FA] dark:bg-[#585364] text-[white] p-[5px] rounded-[5px] mb2:p-[2px]' />
         <MicOffIcon onClick={()=>setCnt(false)} style={{ width:"80px" , height:"4.7vh" , display: cnt  ? "flex" : "none" }} className='bg-[#513d8d] dark:bg-[#242229] text-[white] p-[5px] rounded-[5px]' />
      
       </div>
 
       <div className='flex justify-between items-center pt-[20px] px-[25px]'>
-        <h1 className='font-bold text-[18px]'>
+        <h1 className='font-bold text-[18px] mb2:text-[20px]'>
         Choose Brand
         </h1>
-        <p className='text-gray-500 dark:text-white'>
+        <p className='text-gray-500 dark:text-white mb2:text-[17px]'>
         View All
         </p>
       </div>
 
+</div>
+     
 
-    <ul className='flex dark:bg-[#242229] bg-[#9775FA] items-center gap-[4px] py-[10px] text-[20px] pl-[40px]'>
+    <ul style={
+      { display : pathname == "/login" ? "none" : "flex"}
+    } className='flex dark:bg-[#242229] bg-[#9775FA] justify-around items-center mb2:flex mb2:justify-around mb2:gap-0 mb2:p-[11px] md:py-[15px] md:px-[100px] mb2:text-[22px] gap-[4px] py-[10px] text-[20px] pl-[40px]'>
       {
         pathname == "/login" ? 
         <Link to="/" className='hidden'>
@@ -189,7 +203,7 @@ function Layout() {
         </Link>
         :
         <Link to="/login">
-          <div className='bg-[#f5e2e2] p-[4px] rounded-[5px]'>
+          <div className='bg-[#f5e2e2] p-[4px] rounded-[5px] mb2:p-[6px]'>
           <img className='w-[35px]' src={LogOut} alt="log out" />
           </div>
         </Link>

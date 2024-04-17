@@ -22,7 +22,7 @@ function Cart() {
     },[] )
 
   return (
-    <div className='py-[76px]'>
+    <div className='py-[76px] md:grid md:grid-cols-2 md:items-center'>
     
     <img src={Empty} alt="Empty" style={{display : data == 0 ? "block" : "none" }} />
     
@@ -33,25 +33,25 @@ function Cart() {
             return (
             <>
          
-            <div className='flex py-[10px] justify-center'>
+            <div className='flex py-[10px] justify-center '>
                 
                 <div>
 
 
             <img
-          className="w-[250px] cursor-pointer py-[20px]"
+          className="w-[250px] cursor-pointer py-[20px] md:w-[300px]"
           src={`${import.meta.env.VITE_APP_FILES_URL}${elem.product.image}`}
           alt="product"
           />
 
-         <h1 className='font-semibold flex gap-[10px] dark:text-white'>
+         <h1 className='font-semibold flex gap-[10px] dark:text-white md:text-[20px]'>
             <p className='text-gray-700 font-normal dark:text-gray-200'>
                 Model :
             </p>
           {elem.product.productName}
          </h1>
 
-         <h1 className='flex gap-[10px] pb-[10px] text-red-500 dark:text-black font-semibold'>
+         <h1 className='flex gap-[10px] pb-[10px] md:text-[25px] text-red-500 dark:text-black font-semibold'>
             <p>
             Price :
             </p>

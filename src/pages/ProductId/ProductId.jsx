@@ -109,19 +109,19 @@ function ProductId() {
         </p>
       </div>
 
-      <div style={{display : !hidden? "grid" : "none"}} className='grid-cols-2 items-center gap-[15px] p-[15px]'>
+      <div style={{display : !hidden? "grid" : "none"}} className='grid-cols-2 items-center gap-[15px] md:grid-cols-3 md:gap-[50px] md:p-[30px] p-[15px]'>
 
     {
         data?.products?.map ((elem)=>{
             return(
                 <>
 
-                <div key={elem.id} className='bg-[#F2F2F2] ease-out text-center duration-150 hover:bg-[#d6cfcf]'>
+                <div key={elem.id} className='bg-[#F2F2F2] dark:bg-neutral-700 md:bg-neutral-700 ease-out text-center duration-150 md:flex  md:items-center md:pr-[10px] hover:bg-[#d6cfcf]'>
 
 
                   <Link to={"/login/product"}>
                   <img
-                    className="w-[250px] cursor-pointer pb-[10px] py-[10px]"
+                    className="w-[250px] cursor-pointer pb-[10px] py-[10px] md:w-[800px] md:py-[20px] md:px-[15px]"
                     onClick={()=> Click ( elem ) }
                     src={`${import.meta.env.VITE_APP_FILES_URL}${elem.image}`}
                     alt="product"
@@ -129,9 +129,11 @@ function ProductId() {
                     </Link>
 
 
-                  <h1 className='font-bold'>
+                  <h1 className='font-bold md:pr-[10px] md:bg-white'>
                     Model :
+                    <p className='bg-[#00000073] text-white md:w-[150px]'>
                     {` `+ elem.productName.slice(0,18) }
+                    </p>
                   </h1>
                   
                 </div>

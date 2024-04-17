@@ -6,6 +6,10 @@ import { useNavigate } from "react-router";
 import { axiosRequest } from "../../utils/axiosRequest";
 import { saveToken } from "../../utils/token";
 
+import Loginart from "/src/assets/images/Login back.jpg"
+
+
+
 function Login() {
   const navigate = useNavigate();
 
@@ -30,7 +34,8 @@ function Login() {
   };
 
   return (
-    <>
+    <div className="LogBack">
+
       <div className="Login text-center pt-[150px]">
         <h1 className="Navbar text-[500%] text-[#ffffff8d] mb-[50px]">Login</h1>
 
@@ -66,13 +71,13 @@ function Login() {
           <button
           onClick={()=>window.localStorage.removeItem("img")}
             type="submit"
-            className="text-[200%] bg-[#0000008d] rounded-[2px] hover:text-white ease-in duration-100 hover:shadow-xl hover:shadow-[#ffffff18] hover:bg-[#000000b4] py-[2px] px-[50px] Navbar text-[#ffffff8d]"
+            className="text-[200%] bg-[#0000008d] lg:mt-[-35px] rounded-[2px] hover:text-white ease-in duration-100 hover:shadow-xl hover:shadow-[#ffffff18] hover:bg-[#000000b4] py-[2px] px-[50px] Navbar text-[#ffffff8d]"
           >
             Sign In
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 
