@@ -155,7 +155,9 @@ function Layout() {
           </p>
           <marquee>
          <img src={Figth} alt="adidas" className='lg:w-[150px] lg:ml-[28px]' />
+         <h1 className='font-bold text-[25px]'>
          Мотивацию надо Подняяттьь!!!
+         </h1>
           </marquee>
         </div>
       </div>
@@ -326,7 +328,7 @@ function Layout() {
         </Link>
         :
         <Link to="/login/cart">
-          <div className='inline-block rounded-[5px] p-[5px] ml-[-120px] px-[20px] bg-[#f5e2e2] dark:bg-[#a3947e]'>
+          <div className='inline-block rounded-[5px] p-[5px] ml-[-120px]  px-[20px] bg-[#f5e2e2] dark:bg-[#a3947e]'>
          <h1 className='font-bold'>
           Cart
          </h1>
